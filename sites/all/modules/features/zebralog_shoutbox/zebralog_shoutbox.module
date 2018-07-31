@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Code for the Zebralog_Shoutbox feature.
+ */
+
+include_once 'zebralog_shoutbox.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function zebralog_shoutbox_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'comment_node_questions_form') {
+    $form['author']['#access'] = FALSE;
+  }
+}
